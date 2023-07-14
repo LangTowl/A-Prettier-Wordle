@@ -13,6 +13,7 @@ struct BackgroundView: View {
             .resizable()
             .scaledToFill()
             .ignoresSafeArea()
+            .rotationEffect(.degrees(90))
     }
 }
 

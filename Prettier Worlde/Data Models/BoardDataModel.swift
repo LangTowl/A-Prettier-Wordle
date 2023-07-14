@@ -26,6 +26,7 @@ class GlobalVariables: ObservableObject {
     @Published var column: Int = 0
     @Published var guess: String = ""
     @Published var todays_word: String = ""
+    @Published var win: Bool = false
     @Published var board: [[BoardSpace]] = [
         [BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty)],
         [BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty), BoardSpace(character: "", board_state: .empty)],

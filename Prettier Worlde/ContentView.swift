@@ -18,19 +18,15 @@ struct ContentView: View {
         NavigationStack {
             ZStack {
                 BackgroundView()
+                    .onAppear {
+                        global_variables.todays_word = choose_todays_word()
+                    }
                 
                 VStack {
                     Spacer()
                     
                     BoardView()
                         .environmentObject(global_variables)
-                    
-                    
-                    Spacer()
-                    
-                    //                    HStack {
-                    //                        Text("\(global_variables.todays_word)")
-                    //                    }
                     
                     Spacer()
                     
@@ -89,6 +85,12 @@ struct ContentView: View {
                     .environment(\.colorScheme, .dark)
                     .presentationDetents([.fraction(0.99)])
                     .presentationBackground(.ultraThinMaterial)
+                }
+                
+                if check_if_win(board_state: global_variables) {
+                    WinView()
+                        .environmentObject(global_variables)
+                        .transition(.opacity)
                 }
                 
             }

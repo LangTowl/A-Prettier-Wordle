@@ -96,12 +96,16 @@ func update_keyboard(letter: String, state: BoardState) {
     }
 }
 
-func illegal_guess(board_state: GlobalVariables) {
-    for i in 0...4 {
-        board_state.board[board_state.row][i].board_state = .wrong
-        board_state.board[board_state.row][i].board_state = .empty
-        board_state.board[board_state.row][i].board_state = .wrong
-        board_state.board[board_state.row][i].board_state = .empty
+func update_guess_for_modifier(board_state: GlobalVariables){
+    if is_real_word(guess: board_state.guess) == false {
+        row_four[0].key_state = .wrong
     }
 }
 
+func check_if_win(board_state: GlobalVariables) -> Bool {
+    if board_state.guess == board_state.todays_word {
+        return true
+    }
+    
+    return false
+}

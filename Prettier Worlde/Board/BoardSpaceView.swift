@@ -37,6 +37,7 @@ struct BoardSpaceView: View {
                 .foregroundStyle(.white)
                 .bold()
         }
+        .transition(.scale)
         .frame(width: UIScreen.main.bounds.width / 6, height: UIScreen.main.bounds.width / 6)
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)

@@ -30,7 +30,7 @@ struct KeyButtonView: View {
                 .foregroundStyle(color_state)
             
             RoundedRectangle(cornerRadius: 5)
-                .background(.regularMaterial)
+                .background(.ultraThinMaterial)
                 .environment(\.colorScheme, character.key_state == .wrong ? .light : .dark)
             
             Text(character.character)

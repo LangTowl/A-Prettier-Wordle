@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC98623C2A61A65600CC3A8B /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98623B2A61A65600CC3A8B /* WinView.swift */; };
 		CC9ECBA62A5A21B000DC5C43 /* Prettier_WorldeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */; };
 		CC9ECBA82A5A21B000DC5C43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9ECBA72A5A21B000DC5C43 /* ContentView.swift */; };
 		CC9ECBAA2A5A21B000DC5C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9ECBA92A5A21B000DC5C43 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC98623B2A61A65600CC3A8B /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		CC9ECBA22A5A21B000DC5C43 /* Prettier Worlde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prettier Worlde.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prettier_WorldeApp.swift; sourceTree = "<group>"; };
 		CC9ECBA72A5A21B000DC5C43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC98623A2A61A64200CC3A8B /* Win State */ = {
+			isa = PBXGroup;
+			children = (
+				CC98623B2A61A65600CC3A8B /* WinView.swift */,
+			);
+			path = "Win State";
+			sourceTree = "<group>";
+		};
 		CC9ECB992A5A21B000DC5C43 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			children = (
 				CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */,
 				CC9ECBA72A5A21B000DC5C43 /* ContentView.swift */,
+				CC98623A2A61A64200CC3A8B /* Win State */,
 				CC9ECBC42A5B671700DC5C43 /* Background */,
 				CC9ECBBD2A5B610100DC5C43 /* Board */,
 				CC9ECBB62A5A239000DC5C43 /* Keyboard */,
@@ -200,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC9ECBC82A5DB61A00DC5C43 /* SubmissionFunctions.swift in Sources */,
+				CC98623C2A61A65600CC3A8B /* WinView.swift in Sources */,
 				CC9ECBC62A5B672900DC5C43 /* BackgroundView.swift in Sources */,
 				CC9ECBBF2A5B611700DC5C43 /* BoardSpaceView.swift in Sources */,
 				CC9ECBA82A5A21B000DC5C43 /* ContentView.swift in Sources */,

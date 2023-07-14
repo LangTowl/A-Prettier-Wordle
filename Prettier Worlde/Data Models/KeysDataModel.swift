@@ -55,14 +55,20 @@ var row_three: [Key] = [
     Key(character: "m", key_state: .empty),
 ]
 
+enum ModifierKeyState: String {
+    case empty
+    case wrong
+}
+
 
 struct ModifierKey: Identifiable {
     var id = UUID()
     var name: String
     var icon: String
+    var key_state: ModifierKeyState
 }
 
 var row_four: [ModifierKey] = [
-    ModifierKey(name: "enter", icon: "arrowshape.right"),
-    ModifierKey(name: "delete", icon: "arrowshape.left"),
+    ModifierKey(name: "enter", icon: "arrowshape.right", key_state: .empty),
+    ModifierKey(name: "delete", icon: "arrowshape.left", key_state: .empty),
 ]

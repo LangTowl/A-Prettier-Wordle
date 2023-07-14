@@ -2328,7 +2328,8 @@ let wordle_answers: [String] = [
 func choose_todays_word() -> String {
     let rng: Int = Int.random(in: 0...(wordle_answers.count - 1))
     
-    let todays_word: String = wordle_answers[rng]
+//    let todays_word: String = wordle_answers[rng]
+    let todays_word: String = "berry"
     
     
     for i in 0...4 {
@@ -2376,6 +2377,18 @@ func clear_all(board_state: GlobalVariables) {
             board_state.board[i][j].character = ""
             board_state.board[i][j].board_state = .empty
         }
+    }
+    
+    for i in 0...(row_one.count - 1) {
+        row_one[i].key_state = .empty
+    }
+    
+    for i in 0...(row_two.count - 1) {
+        row_two[i].key_state = .empty
+    }
+    
+    for i in 0...(row_three.count - 1) {
+        row_three[i].key_state = .empty
     }
     
     board_state.row = 0

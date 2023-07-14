@@ -13,6 +13,16 @@ struct ModifierButtonView: View {
     
     var body: some View {
         ZStack {
+            switch button.key_state {
+            case .empty:
+                Circle()
+                    .foregroundColor(.clear)
+            case .wrong:
+                RoundedRectangle(cornerRadius: 5)
+                    .foregroundColor(.red)
+            }
+
+            
             RoundedRectangle(cornerRadius: 5)
                 .background(.ultraThinMaterial)
                 .environment(\.colorScheme, .dark)

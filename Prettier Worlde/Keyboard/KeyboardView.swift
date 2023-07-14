@@ -76,6 +76,7 @@ struct KeyboardView: View {
                     if global_variables.column == 5 {
                         
                         update_guess(board_state: global_variables)
+                        update_guess_for_modifier(board_state: global_variables)
                         
                         if is_real_word(guess: global_variables.guess) == true {
                             
@@ -83,8 +84,6 @@ struct KeyboardView: View {
                             
                             global_variables.row += 1
                             global_variables.column = 0
-                        } else {
-                            illegal_guess(board_state: global_variables)
                         }
                     }
                 } label: {
@@ -94,8 +93,11 @@ struct KeyboardView: View {
                 
                 Button {
                     if global_variables.column != 0 {
+                        update_guess_for_modifier(board_state: global_variables)
                         global_variables.column -= 1
                     }
+                    
+                    row_four[0].key_state = .empty
                     
                     global_variables.board[global_variables.row][global_variables.column].character = ""
                 } label: {
