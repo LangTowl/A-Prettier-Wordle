@@ -2328,48 +2328,29 @@ let wordle_answers: [String] = [
 func choose_todays_word() -> String {
     let rng: Int = Int.random(in: 0...(wordle_answers.count - 1))
     
-//    let todays_word: String = wordle_answers[rng]
-    let todays_word: String = "berry"
+    let todays_word: String = wordle_answers[rng]
     
+//    let todays_word: String = "loose"
     
-    for i in 0...4 {
-        for j in 0...(letter_occurence.count - 1) {
-            if String(todays_word[i]) == letter_occurence[j].0 {
-                letter_occurence[j].1 += 1
-            }
-        }
-    }
+    update_word_occurence(word: todays_word)
     
     return todays_word
 }
 
-var letter_occurence: [(String, Int)] = [
-    ("a", 0),
-    ("b", 0),
-    ("c", 0),
-    ("d", 0),
-    ("e", 0),
-    ("f", 0),
-    ("g", 0),
-    ("h", 0),
-    ("i", 0),
-    ("j", 0),
-    ("k", 0),
-    ("l", 0),
-    ("m", 0),
-    ("n", 0),
-    ("o", 0),
-    ("p", 0),
-    ("q", 0),
-    ("r", 0),
-    ("s", 0),
-    ("t", 0),
-    ("u", 0),
-    ("v", 0),
-    ("x", 0),
-    ("y", 0),
-    ("z", 0)
+                    // Letter   Occurence // Index
+var letter_occurence: [(String, Bool)] = [
+    ("", false),
+    ("", false),
+    ("", false),
+    ("", false),
+    ("", false),
 ]
+
+func update_word_occurence(word: String) {
+    for i in 0...(word.count - 1) {
+        letter_occurence[i].0 = String(word[i])
+    }
+}
 
 func clear_all(board_state: GlobalVariables) {
     for i in 0...5 {
@@ -2404,3 +2385,67 @@ func is_real_word(guess: String) -> Bool {
     
     return false
 }
+
+
+// func update_board_test(board_state: GlobalVariables) {
+//     for i in 0...(board_state.todays_word.count - 1) {
+//         
+//         var temp_state: BoardState = .empty
+//         var temp_break: Bool = false
+//         
+//         for j in 0...(board_state.guess.count - 1) {
+//             
+//             if String(board_state.todays_word[i]) == String(board_state.guess[j]) {
+//                 
+//                 for k in 0...(letter_occurence.count - 1) {
+//                     
+//                     if letter_occurence[k].0 == String(board_state.todays_word[i]) {
+//                         
+//                         if i == 0 {
+//                             letter_occurence[k].2 = j
+//                             
+//                             if i == j {
+//                                 temp_state = .correct
+//                                 temp_break = true
+//                                 break
+//                             } else {
+//                                 temp_state = .partial
+//                                 temp_break = true
+//                                 break
+//                             }
+//                         }
+//                         
+//                         if letter_occurence[k].2 != j {
+//                             letter_occurence[k].2 = j
+//                             
+//                             if i == j {
+//                                 temp_state = .correct
+//                                 temp_break = true
+//                                 break
+//                             }
+//                             
+//                             temp_state = .partial
+//                             temp_break = true
+//                             break
+//                         }
+//                     }
+//                 }
+//             }
+//             
+//             if temp_break == true {
+//                 temp_break = false
+//                 break
+//             }
+//         }
+//         
+//         if temp_state == .empty {
+//             temp_state = .wrong
+//         }
+//         
+////         withAnimation {
+////             board_state.board[board_state.row][i].board_state = temp_state
+////             update_keyboard(letter: board_state.board[board_state.row][i].character, state: temp_state)
+////         }
+//     }
+// }
+// 

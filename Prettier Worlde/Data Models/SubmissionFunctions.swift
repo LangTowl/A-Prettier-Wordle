@@ -24,17 +24,27 @@ extension StringProtocol {
 }
 
 func update_board(board_state: GlobalVariables) {
-    for i in 0...4 {
+    for i in 0...(board_state.guess.count - 1) {
+        
         var temp_state: BoardState = .empty
-        for j in 0...4 {
-            if String(board_state.guess[i]) == String(board_state.todays_word[j]) {
-                if i == j {
+        
+        for j in 0...(letter_occurence.count - 1) {
+            
+            if String(board_state.guess[i]) == letter_occurence[j].0 {
+                
+                if letter_occurence[j].1 == true {
                     temp_state = .correct
                     break
+                } else {
+                    letter_occurence[j].1 = true
+                    
+                    if i == j {
+                        temp_state = .correct
+                        break
+                    }
+                    
+                    temp_state = .partial
                 }
-                
-                temp_state = .partial
-                break
             }
         }
         
@@ -46,6 +56,10 @@ func update_board(board_state: GlobalVariables) {
             board_state.board[board_state.row][i].board_state = temp_state
             update_keyboard(letter: board_state.board[board_state.row][i].character, state: temp_state)
         }
+    }
+    
+    for i in 0...(letter_occurence.count - 1) {
+        letter_occurence[i].1 = false
     }
 }
 
@@ -104,6 +118,16 @@ func update_guess_for_modifier(board_state: GlobalVariables){
 
 func check_if_win(board_state: GlobalVariables) -> Bool {
     if board_state.guess == board_state.todays_word {
+        return true
+    }
+    
+    return false
+}
+
+func check_if_loose(board_state: GlobalVariables) -> Bool {
+    
+    if board_state.row == 6 && board_state.guess != board_state.todays_word {
+        
         return true
     }
     

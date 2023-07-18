@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2EADC62A66271000FFD725 /* LoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EADC52A66271000FFD725 /* LoseView.swift */; };
 		CC98623C2A61A65600CC3A8B /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98623B2A61A65600CC3A8B /* WinView.swift */; };
 		CC9ECBA62A5A21B000DC5C43 /* Prettier_WorldeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */; };
 		CC9ECBA82A5A21B000DC5C43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9ECBA72A5A21B000DC5C43 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2EADC52A66271000FFD725 /* LoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseView.swift; sourceTree = "<group>"; };
 		CC98623B2A61A65600CC3A8B /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		CC9ECBA22A5A21B000DC5C43 /* Prettier Worlde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prettier Worlde.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prettier_WorldeApp.swift; sourceTree = "<group>"; };
@@ -54,12 +56,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CC98623A2A61A64200CC3A8B /* Win State */ = {
+		CC98623A2A61A64200CC3A8B /* Game Outcome */ = {
 			isa = PBXGroup;
 			children = (
 				CC98623B2A61A65600CC3A8B /* WinView.swift */,
+				CC2EADC52A66271000FFD725 /* LoseView.swift */,
 			);
-			path = "Win State";
+			path = "Game Outcome";
 			sourceTree = "<group>";
 		};
 		CC9ECB992A5A21B000DC5C43 = {
@@ -83,7 +86,7 @@
 			children = (
 				CC9ECBA52A5A21B000DC5C43 /* Prettier_WorldeApp.swift */,
 				CC9ECBA72A5A21B000DC5C43 /* ContentView.swift */,
-				CC98623A2A61A64200CC3A8B /* Win State */,
+				CC98623A2A61A64200CC3A8B /* Game Outcome */,
 				CC9ECBC42A5B671700DC5C43 /* Background */,
 				CC9ECBBD2A5B610100DC5C43 /* Board */,
 				CC9ECBB62A5A239000DC5C43 /* Keyboard */,
@@ -217,6 +220,7 @@
 				CC9ECBA82A5A21B000DC5C43 /* ContentView.swift in Sources */,
 				CC9ECBBC2A5B5DDF00DC5C43 /* ModifierButtonView.swift in Sources */,
 				CC9ECBB82A5A23A300DC5C43 /* KeyboardView.swift in Sources */,
+				CC2EADC62A66271000FFD725 /* LoseView.swift in Sources */,
 				CC9ECBC32A5B640000DC5C43 /* BoardDataModel.swift in Sources */,
 				CC9ECBA62A5A21B000DC5C43 /* Prettier_WorldeApp.swift in Sources */,
 				CC9ECBC12A5B61B100DC5C43 /* BoardView.swift in Sources */,

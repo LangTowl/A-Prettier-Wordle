@@ -80,6 +80,8 @@ struct KeyboardView: View {
                         
                         if is_real_word(guess: global_variables.guess) == true {
                             
+                            print("is real word")
+                            
                             update_board(board_state: global_variables)
                             
                             global_variables.row += 1
@@ -113,3 +115,31 @@ struct KeyboardView: View {
 #Preview {
     ContentView()
 }
+
+/*
+ func update_board(board_state: GlobalVariables) {
+     for i in 0...4 {
+         var temp_state: BoardState = .empty
+         for j in 0...4 {
+             if String(board_state.guess[i]) == String(board_state.todays_word[j]) {
+                 if i == j {
+                     temp_state = .correct
+                     break
+                 }
+                 
+                 temp_state = .partial
+                 break
+             }
+         }
+         
+         if temp_state == .empty {
+             temp_state = .wrong
+         }
+         
+         withAnimation {
+             board_state.board[board_state.row][i].board_state = temp_state
+             update_keyboard(letter: board_state.board[board_state.row][i].character, state: temp_state)
+         }
+     }
+ }
+ */

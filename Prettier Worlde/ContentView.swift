@@ -37,46 +37,24 @@ struct ContentView: View {
                 }
                 .sheet(isPresented: $show_popover) {
                     NavigationStack {
-                        
-                        VStack {
-                            Button {
-                                show_word.toggle()
-                            } label: {
-                                Text("\(show_word == true ? "hide" : "show") today's word")
-                                    .foregroundStyle(.white)
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 5)
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(Capsule())
-                            }
-                            .padding(.vertical)
-                            
-                            Text(show_word == true ? global_variables.todays_word : " ")
+                        Button {
+                            show_word.toggle()
+                        } label: {
+                            Text("\(show_word == true ? "hide" : "show") today's word")
+                                .foregroundStyle(.white)
+                                .padding(.horizontal)
+                                .padding(.vertical, 5)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Capsule())
                         }
+                        .padding(.vertical)
                         
+                        Text(show_word == true ? global_variables.todays_word : " ")
                         
                         VStack {
-                            HStack {
-                                VStack(alignment: .leading){ForEach(0...letter_occurence.count - 1, id: \.self) { i in                                            Text("\(letter_occurence[i].0)")
-                                        .foregroundStyle(.white)
-                                        .padding(.trailing)
-                                        .padding(.trailing)
-                                }
-                                }
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                
-                                VStack(alignment: .leading){
-                                    ForEach(0...letter_occurence.count - 1, id: \.self) { i in
-                                        Text("\(letter_occurence[i].1)")
-                                            .foregroundStyle(.white)
-                                            .padding(.trailing)
-                                            .padding(.trailing)
-                                    }
-                                }
+                            ForEach(0...(letter_occurence.count - 1), id: \.self) { i in
+                                Text("\(letter_occurence[i].0)   \(String(letter_occurence[i].1))")
                             }
-                            
-                            Spacer()
                         }
                         .padding()
                         .padding(.horizontal)
@@ -93,10 +71,17 @@ struct ContentView: View {
                         .transition(.opacity)
                 }
                 
+                if check_if_loose(board_state: global_variables) {
+                    LoseView()
+                        .environmentObject(global_variables)
+                        .transition(.opacity)
+                }
+                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        global_variables.todays_word = ""
                         global_variables.todays_word = choose_todays_word()
                         clear_all(board_state: global_variables)
                     } label: {
@@ -125,3 +110,71 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+/*
+ **func** update_board(board_state: GlobalVariables) {
+
+     **for** i **in** 0...4 {
+
+         **var** temp_state: BoardState = .empty
+
+         **var** temp_index: Int = 0
+
+         **for** j **in** 0...4 {
+
+             **if** String(board_state.guess[i]) == String(board_state.todays_word[j]) {
+
+                 **for** k **in** 0...(letter_occurence.count - 1) {
+
+                     **if** String(board_state.todays_word[j]) == letter_occurence[k].0 {
+
+                         letter_occurence[k].2 = i
+
+                         temp_index = i
+
+                     }
+
+                 }
+
+                 **if** i == j {
+
+                     temp_state = .correct
+
+                     **break**
+
+                 }
+
+                 temp_state = .partial
+
+                 **if** temp_index == j {
+
+                     temp_state = .correct
+
+                     **break**
+
+                 }
+
+                 **break**
+
+             }
+
+         }
+
+         **if** temp_state == .empty {
+
+             temp_state = .wrong
+
+         }
+
+         withAnimation {
+
+             board_state.board[board_state.row][i].board_state = temp_state
+
+             update_keyboard(letter: board_state.board[board_state.row][i].character, state: temp_state)
+
+         }
+
+     }
+
+ }
+ */
