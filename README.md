@@ -14,3 +14,4 @@
 - The algorithm that updates the colors of the board and keyboards sometimes gets confused when the word of the day has either double or triple redundant letters
 
 ### App screenshots
+![](App Screenshots/Simulator Screenshot - iPhone 14 Pro - 2023-07-19 at 10.56.02)
