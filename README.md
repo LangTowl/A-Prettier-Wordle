@@ -1,7 +1,7 @@
 # A Prettier Wordle
 ---
 ### A simple clone
-**A Prettier Wordle** is a very simple clone of the popular [New York Times]() game, but with a slightly more stylized UI.
+**A Prettier Wordle** is a very simple clone of the popular [New York Times](https://www.nytimes.com/games/wordle/index.html) game, but with a slightly more stylized UI.
 
 ### Features
 - Pool of 2316 5 letter words, of which one is selected every time the app is opened
