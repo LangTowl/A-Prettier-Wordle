@@ -14,6 +14,3 @@
 - The algorithm that updates the colors of the board and keyboards sometimes gets confused when the word of the day has either double or triple redundant letters
 
 ### App screenshots
-<img src: "https://github.com/LangTowl/A-Prettier-Wordle/assets/119524847/fd54fb00-bf3c-43bb-b9d1-5fa8a38ba247" width"60%">
-
-
